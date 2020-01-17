@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    var questions = [
+        ["Что носил за спиной Карбофос?", ["стул", "стульчик", "табурет", "табуретка"]],
+        ["Какого цвета небо?", ["blue", "голубое", "голубого"]],
+        ["Как меня зовут?", ["дима", "dima", "димка", "дмитрий"]],
+        ["Какой сейчас год?", ["2020", "две тысячи двадцатый", "текущий"]],
+    ];
+    var successCount = 0;
+
+    function askQuestion(question) {
+        var answer = prompt(question[0]).toLowerCase();
+        for (let index = 0; index < question[1].length; index++) {
+            if (answer == question[1][index]) {
+                successCount++
+                alert("Верно, идем дальше!");
+                break;
+            }
+            if (index == question[1].length - 1) {
+                alert("Не верно, правильный ответ: " + question[1][0]);
+            }
+        }
+    }
+    
+    for (let index = 0; index < questions.length; index++) {
+        askQuestion(questions[index]);
+    }
+    alert("Из 4 загадок ты смог дать правильные ответы на " + successCount + " из них.");
+
+</script>

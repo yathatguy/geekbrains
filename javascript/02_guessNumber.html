@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    var answer = parseInt(Math.random() * 100);
+    console.log(answer);
+    
+    var exit = false;
+    var iter = 1;
+
+    do {
+        if (iter % 2 == 1) {
+            var userNum = "1";
+        } else {
+            userNum = "2";
+        }
+        var userAnswer = +prompt("Задание для игрока " + userNum + ": угадайте число от 0 до 100");
+        if (userAnswer > answer) {
+            document.writeln("Игрок " + userNum + ": cлишком много.<br>");
+        } else if (userAnswer < answer) {
+            document.writeln("Игрок " + userNum + ": cлишком мало.<br>");
+        } else {
+            document.writeln("Вы угадали!<br>");
+            document.writeln("Победил игрок " + userNum + ".<br>");
+            break;
+        }
+        exitAnswer = confirm("Хотите выйти из игры?");
+        iter++;
+    } while (exitAnswer != true)
+
+    document.writeln("Правильный ответ: " + answer);
+
+</script>

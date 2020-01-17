@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+    var question1 = "Что носил за спиной Карбофос?";
+    var question2 = "Какого цвета небо?";
+    var question3 = "Как меня зовут?";
+    var question4 = "Какой сейчас год?";
+
+    var answer1 = prompt(question1).toLowerCase();
+    if (answer1 == "стул" || answer1 == "стульчик" || answer1 == "табурет" || answer1 == "табуретка") {
+        document.write("Все верно. \nНа этом наша игра завершена!");
+    } else {
+        var successCount = 0;
+        document.writeln("Неверно. Но давай попробуем еще несколько загадок.<br>");
+        answer2 = prompt(question2).toLowerCase();
+        answer3 = prompt(question3).toLowerCase();
+        answer4 = prompt(question4).toLowerCase();
+        if (answer2 == "blue" || answer2 == "голубое" || answer2 == "голубого") {
+            successCount++;
+        }
+        if (answer3 == "дима" || answer3 == "dima" || answer3 == "димка" || answer3 == "дмитрий") {
+            successCount++;
+        }
+        if (answer4 == "2020" || answer4 == "две тысячи двадцатый" || answer4 == "текущий") {
+            successCount++;
+        }
+        document.write("Из 4 загадок ты смог дать правильные ответы на " + successCount + " из них.")
+    }
+    
+
+</script>

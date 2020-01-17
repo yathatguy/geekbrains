@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    function generateText(letters, length) {
+        var text = "";
+        for (let index = 0; index < length; index++) {
+            text = text + letters[getRandomNumber(letters.length - 1)];
+        }
+        return text
+    }
+
+    function getRandomNumber(max) {
+        var rand = Math.round(Math.random() * max);
+        return rand;
+    }
+
+    function levelTry(level) {
+        while (true) {
+            alert(level[2]);
+            var text = generateText(level[0], level[1]);
+            var userText = prompt(text);
+            if (userText == text) {
+                alert("Круто! Переходим на следующий уровень.");
+                break;
+            } else {
+                alert("Вы ошиблись. Попробуем еще раз!");
+            }
+        }    
+    }
+
+    var levels = [
+        [["ф", "а"], 10, "Положите левую руку на клавиатуру таким образом, чтоб пальцы левой руки мезинец, безымянный, средний и указательный лежали на клавишах (ф, ы, в, а).\nНабирайте текст и старайтесь не смотреть на клавиатуру."],
+        [["ы", "в"], 10, "Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. Запомните расположение пальцев. Повторяйте за мной."],
+        [["о", "ж"], 10, "Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний -— на Л, указательный — на О. Запомните расположение пальцев."],
+    ]
+
+    alert("Обучение слепой печати");
+    for (let index = 0; index < levels.length; index++) {
+        levelTry(levels[index]);
+    }
+</script>

@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    function compareAnswers(answer, number) {
+        if (userAnswer == number) {
+            alert("Верно! Это " + number);
+        } else {
+            alert("Не верно! Это " + number);
+        }
+    }
+
+    function getRandomNumber(max) {
+        var rand = Math.round(Math.random() * max);
+        return rand;
+    }
+
+    function getRandomNumberArray(length) {
+        var numbers = [];
+        for (let index = 0; index < length; index++) {
+            numbers.push(getRandomNumber(100));
+        }
+        alert("Запомните эти числа и их порядок: " + numbers);
+        console.log(numbers);
+        return numbers
+    }
+
+    var n = +prompt("Сколько чисел  будет в игре?");
+    var numbers = getRandomNumberArray(n);
+    
+    var userAnswer = +prompt("Каким было первое число?");
+    compareAnswers(userAnswer, numbers[0]);
+
+    userAnswer = +prompt("Каким было последнее число?");
+    compareAnswers(userAnswer, numbers[numbers.length - 1]);
+
+    var ran = getRandomNumber(numbers.length - 1);
+    userAnswer = +prompt("Какое было число на " + (ran + 1) + " позиции?");
+    compareAnswers(userAnswer, numbers[ran]);
+
+</script>

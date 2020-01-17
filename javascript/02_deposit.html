@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    do {
+        var initAmount = +prompt("Сколько денег вы готовы положить на счет?");
+    } while (isNaN(initAmount) || initAmount <= 0)
+    
+    do {
+        var percentage = +prompt("Под какой процент кладем указанную сумму?");
+    } while (isNaN(percentage) || percentage <= 0)
+
+    var depositPeriod = 5;
+    var interest = 0;
+    var totalAmount = initAmount;
+    
+    for (let index = 1; index <= depositPeriod; index++) {
+        totalAmount = totalAmount + (totalAmount * percentage / 100);
+        document.write("За " + index + " год сумма на вашем вкладе составит " + totalAmount + " рублей<br>")
+    }
+    document.write("Итоговая сумма на вашем счету: " + totalAmount);
+
+</script>
