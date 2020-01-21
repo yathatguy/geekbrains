@@ -2,7 +2,7 @@
 <script type="text/javascript">
 
     function generateArray() {
-        var length = NaN;
+        let length = NaN;
         do {
             length = +prompt("Введите какое количество элементов должно быть в массиве");
         } while ((length < 0) || (isNaN(length)))
@@ -14,18 +14,19 @@
     }
 
     function sumArray(array) {
-        var sum = 0;
+        let sum = 0;
         for (let index = 0; index < array.length; index++) {
             sum = sum + array[index];
         }
         return sum
     }
 
-    function maxNumInArra(array) {
+    function maxNumInArray(array) {
+        let max = NaN;
         if (array.length == 0) {
             return NaN
         } else {
-            var max = array[0];
+            max = array[0];
         }
         for (let index = 0; index < array.length; index++) {
             if (array[index] > max) {
@@ -35,11 +36,12 @@
         return max
     }
 
-    function minNumInArra(array) {
+    function minNumInArray(array) {
+        let min = NaN;
         if (array.length == 0) {
             return NaN
         } else {
-            var min = array[0];
+            min = array[0];
         }
         for (let index = 0; index < array.length; index++) {
             if (array[index] < min) {
@@ -53,7 +55,7 @@
         if (array.length < 2) {
             return NaN
         }
-        var res = []
+        let res = []
         for (let index = 0; index < array.length; index++) {
             if (array[index] % 2 == 0) {
                 res.push(array[index]);
@@ -65,8 +67,8 @@
     var array = generateArray()
     alert("Получившийся массив: " + array);
     alert("Сумма всех элементов в массиве: " + sumArray(array));
-    alert("Максимальный элемент в массиве: " + maxNumInArra(array));
-    alert("Минимальный элемент в массиве: " + minNumInArra(array));
+    alert("Максимальный элемент в массиве: " + maxNumInArray(array));
+    alert("Минимальный элемент в массиве: " + minNumInArray(array));
     alert("Все четные элементы массива: " + getEvenFromArray(array));
 
 </script>

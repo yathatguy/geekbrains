@@ -1,19 +1,20 @@
 <meta charset="utf-8">
 <script type="text/javascript">
 
-    var answer = parseInt(Math.random() * 100);
+    let answer = parseInt(Math.random() * 100);
     console.log(answer);
-    
-    var exit = false;
-    var iter = 1;
+
+    let iter = 1;
+    let exitAnswer = false;
 
     do {
+        let userNum;
         if (iter % 2 == 1) {
-            var userNum = "1";
+            userNum = "1";
         } else {
             userNum = "2";
         }
-        var userAnswer = +prompt("Задание для игрока " + userNum + ": угадайте число от 0 до 100");
+        let userAnswer = +prompt("Задание для игрока " + userNum + ": угадайте число от 0 до 100");
         if (userAnswer > answer) {
             document.writeln("Игрок " + userNum + ": cлишком много.<br>");
         } else if (userAnswer < answer) {

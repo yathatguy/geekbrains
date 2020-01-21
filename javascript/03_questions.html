@@ -1,13 +1,13 @@
 <meta charset="utf-8">
 <script type="text/javascript">
 
-    var questions = [
+    let questions = [
         ["Что носил за спиной Карбофос?", ["стул", "стульчик", "табурет", "табуретка"]],
         ["Какого цвета небо?", ["blue", "голубое", "голубого"]],
         ["Как меня зовут?", ["дима", "dima", "димка", "дмитрий"]],
         ["Какой сейчас год?", ["2020", "две тысячи двадцатый", "текущий"]],
     ];
-    var successCount = 0;
+    let successCount = 0;
 
     function askQuestion(question) {
         var answer = prompt(question[0]).toLowerCase();
