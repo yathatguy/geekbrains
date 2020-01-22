@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Личный сайт студента GeekBrains</title>
-	<link rel="stylesheet" href="style.css"> 
-	<script type="text/javascript">
+    <meta charset="utf-8">
+    <title>Угадайка</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
 
-		var answer = parseInt(Math.random() * 100);
-		var tryCount = 0;
-		var maxTryCount = 3;
+        let answer = parseInt(Math.random()*100);
+        let tryCount = 1;
+        var maxTryCount = 3;
 
-		function readInt(){
-			var number = document.getElementById("userAnswer").value;
-			return parseInt(number);
-			// return +document.getElementById("userAnswer").value;
-		}
+        function readUserInput() {
+            var number = document.getElementById("userAnswer").value;
+            return number;
+        }
 
-		function write(text){
-			document.getElementById("info").innerHTML = text;
-		}
+        function updateText(text) {
+            document.getElementById("info").innerHTML=text;
+        }
 
-		function hide(id){
-			document.getElementById(id).style.display = "none";
-		}
+        function hideItem(id) {
+            document.getElementById(id).style.displey = "none";
+        }
 
-		function guess(){
-			tryCount++;
+        function guessNumber() {
+            var userNum;
+            if (tryCount % 2 == 1) {
+                userNum = 1;
+                tryCount++;
+            } else {
+                userNum = 2;
+            }
 
-			var userAnswer = readInt();
-			if(userAnswer == answer){
-				write("<b>Поздравляю, вы угадали!</b>");
-				hide("button");
-				hide("userAnswer");
-			} else if(tryCount >= maxTryCount){
-				write("Вы проиграли<br>Правильный ответ: " + answer);
-				hide("button");
-				hide("userAnswer");
-			} else if(userAnswer > answer){
-				write("Вы ввели слишком большое число<br>Попробуйте еще раз. Введите число от 1 до 100");
-			} else if(userAnswer < answer){
-				write("Вы ввели слишком маленькое число<br>Попробуйте еще раз. Введите число от 1 до 100");				
-			}
-		}
+            var userAnswer = readUserInput();
+            if (userAnswer == answer) {
+                updateText("Верно, пользователь " + userNum);
+                hideItem("button");
+                hideItem("userAnswer");
+            } else if (userAnswer > answer) {
+                updateText("Слишком много, пользователь " + userNum);
+            } else if (userAnswer < answer) {
+                updateText("Слишком мало, пользователь " + userNum);
+            }
+            if (tryCount >= maxTryCount) {
+                updateText("Пользователь " + userNum + ", вы проиграли. Правильный ответ: " + answer);
+                hideItem("button");
+                hideItem("userAnswer");
+            }
+        }
 
-	</script>
+    </script>
 </head>
 <body>
 
@@ -51,32 +57,25 @@
     <?php
     include "menu.php"
     ?>
+</div>
 
 <div class="contentWrap">
     <div class="content">
         <div class="center">
-
-			<h1>Игра угадайка</h1>
-
-			<div class="box">
-
-				<p id="info">Угадайте число от 0 до 100</p>
-				<input type="text" id="userAnswer">
-				<br>
-				<a href="#" onClick="guess();" id="button">Начать</a>				
-			</div>
-
+            <h1>Угадайка</h1>
+            <div class="box">
+                <p id="info">Угадайте число от 0 до 100</p>
+                <input type="number" id="userAnswer">
+                <br>
+                <a href="#" onclick="guessNumber();" id="button">Угадать</a>
+            </div>
         </div>
     </div>
 </div>
-
-	
-
-</div>
-<?php
-include "footer.php"
-?>
-
-
+<footer>
+    <?php
+    include "footer.php"
+    ?>
+</footer>
 </body>
 </html>

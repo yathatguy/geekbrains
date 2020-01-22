@@ -4,27 +4,6 @@
     <meta charset="utf-8">
     <title>Игра в загадки</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        let score = 0;
-
-        function checkAnswer(inputId, answers) {
-            let userAnswer = document.getElementById(inputId).value;
-            userAnswer = userAnswer.toLowerCase();
-            for (let i = 0; i < answers.length; i++) {
-                if (userAnswer == answers[i]) {
-                    score++;
-                    break;
-                }
-            }
-        }
-
-        function checkAnswers() {
-            checkAnswer("userAnswer1", ["сон", "сновидение"])
-            checkAnswer("userAnswer2", ["морской", "укус акулы"])
-            checkAnswer("userAnswer3", ["шахматный", "мертвый"])
-            alert("Вы отгадали " + score + " загадок");
-        }
-    </script>
 </head>
 <body>
 
@@ -43,16 +22,20 @@
                 <?php
                     if (isset($_GET["userAnswer1"]) || isset($_GET["userAnswer2"]) || isset($_GET["userAnswer3"])) {
                         $score = 0;
-                        $userAnswer = $_GET["userAnswer1"];
-                        if ($userAnswer == "сон" || $userAnswer == "сновидение") {
+                        $userAnswer = strtolower($_GET["userAnswer1"]);
+                        if ($userAnswer == "стул" || $userAnswer == "стульчик" || $userAnswer == "табурет" || $userAnswer == "табуретка") {
                             $score++;
                         }
-                        $userAnswer = $_GET["userAnswer2"];
-                        if ($userAnswer == "морской") {
+                        $userAnswer = strtolower($_GET["userAnswer2"]);
+                        if ($userAnswer == "blue" || $userAnswer == "голубое" || $userAnswer == "голубого") {
                             $score++;
                         }
-                        $userAnswer = $_GET["userAnswer3"];
-                        if ($userAnswer == "мертвый" || $userAnswer == "шахматный") {
+                        $userAnswer = strtolower($_GET["userAnswer3"]);
+                        if ($userAnswer == "дима" || $userAnswer == "dima" || $userAnswer == "димка" || $userAnswer == "дмитрий") {
+                            $score++;
+                        }
+                        $userAnswer = strtolower($_GET["userAnswer4"]);
+                        if ($userAnswer == "2020" || $userAnswer == "две тысячи двадцатый" || $userAnswer == "текущий") {
                             $score++;
                         }
 
@@ -63,14 +46,17 @@
 
                 <form method="get">
 
-                    <p>Что можно увидеть с закрытыми глазами?</p>
+                    <p>Что носил за спиной Карбофос?</p>
                     <input type="text" name="userAnswer1">
 
-                    <p>Какой болезнью никто не болеет на суше?</p>
+                    <p>Какого цвета небо?</p>
                     <input type="text" name="userAnswer2">
 
-                    <p>Какой конь не есть овса?</p>
+                    <p>Как меня зовут?</p>
                     <input type="text" name="userAnswer3">
+
+                    <p>Какой сейчас год?</p>
+                    <input type="text" name="userAnswer4">
                     <br>
                     <input type="submit" value="Ответить" name="">
 
@@ -80,12 +66,10 @@
         </div>
     </div>
 </div>
-
-
-<?php
-include "footer.php"
-?>
-
-
+<footer>
+    <?php
+    include "footer.php"
+    ?>
+</footer>
 </body>
 </html>

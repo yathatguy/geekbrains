@@ -1,3 +1,3 @@
 <div class="footer">
-    Copyright <?php echo date("Y");?> &copy; Vasily Pupkin
+    Copyright <?php echo date("Y");?> &copy; @thatguy
 </div>
