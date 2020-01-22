@@ -8,11 +8,9 @@
 <body>
 
 <div class="content">
-	<div class="header">
-		<a href="index.html">Главная</a>
-		<a href="puzzle.html">Загадки</a>
-		<a href="guess.html">Угадайка</a>
-	</div>
+<?php
+    include "menu.php"
+?>
 
 	<h1>Личный сайт студента GeekBrains</h1>
 
@@ -31,9 +29,9 @@
 		</div>
 	</div>
 </div>
-<div class="footer">
-	Copyright <?php echo date("Y");?> &copy; Vasily Pupkin
-<div>
+<?php
+    include "footer.php"
+?>
 
 
 </body>
