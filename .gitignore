@@ -1,3 +1,4 @@
 .gitignore
 .idea/
 geekbrains.iml
+.DS_Store
