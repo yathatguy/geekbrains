@@ -1,0 +1,63 @@
+body {
+    background-color: #f8f8f8;
+}
+
+.menu a {
+    color: #8B00FF;
+    font-style: italic;
+    font-size: 20px;
+}
+.menu li {
+    list-style-type: none;
+}
+
+h3.short_description,
+h3.specifications,
+h3.long_description {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+.short_description {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+.specifications li {
+    list-style-image: url("http://tympanus.net/codrops-playground/assets/images/cssref/pseudo/list-style-image/list-style-image.png");
+}
+.long_description {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+
+form input#name {
+    height: 10px;
+    width: 300px;
+    font-style: italic;
+    font-size: 12px;
+}
+form input#email {
+    height: 10px;
+    width: 330px;
+    font-style: italic;
+    font-size: 12px;
+}
+form input#theme {
+    height: 10px;
+    width: 255px;
+    font-style: italic;
+    font-size: 12px;
+}
+form textarea#message {
+    height: 100px;
+    width: 370px;
+    font-style: italic;
+    font-size: 12px;
+}
