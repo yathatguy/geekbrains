@@ -7,18 +7,16 @@ body {
     font-style: italic;
     font-size: 20px;
 }
+.menu a:hover{
+    color: red;
+}
+.menu a:active {
+    color: limegreen;
+}
 .menu li {
     list-style-type: none;
 }
 
-h3.short_description,
-h3.specifications,
-h3.long_description {
-    color: #000000;
-    font-size: 18px;
-    font-weight: 400;
-    background-color: #eaeaea;
-}
 .short_description {
     color: #707070;
     font-size: 14px;
@@ -35,6 +33,18 @@ h3.long_description {
     line-height: 24px;
     text-align: left;
 }
+h3.short_description,
+h3.specifications,
+h3.long_description {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+.red-letter:first-letter {
+    font-family: "Helvetica Neue";
+    color: red;
+}
 
 
 form input#name {
@@ -48,6 +58,8 @@ form input#email {
     width: 330px;
     font-style: italic;
     font-size: 12px;
+    background-color: antiquewhite;
+    color: indigo;
 }
 form input#theme {
     height: 10px;
@@ -61,3 +73,10 @@ form textarea#message {
     font-style: italic;
     font-size: 12px;
 }
+form input {
+    text-transform: capitalize;
+}
+form textarea {
+    text-transform: capitalize;
+}
+
