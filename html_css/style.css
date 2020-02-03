@@ -46,6 +46,7 @@ h3.long_description {
     color: red;
 }
 
+
 form input#name {
     height: 10px;
     width: 300px;
@@ -78,3 +79,4 @@ form input {
 form textarea {
     text-transform: capitalize;
 }
+
