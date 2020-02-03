@@ -2,6 +2,10 @@ body {
     background-color: #f8f8f8;
 }
 
+.menu {
+    background-color: #8cbbd3;
+}
+
 .menu a {
     color: #8B00FF;
     font-style: italic;
@@ -46,19 +50,35 @@ h3.long_description {
     color: red;
 }
 
+h1 {
+    background-color: orange;
+}
 
+.product_img {
+    outline: 4px solid orange;
+}
+.product_img:hover {
+    outline: none;
+}
+
+.contact_us {
+    width: 500px;
+}
 form input#name {
     height: 10px;
     width: 300px;
     font-style: italic;
     font-size: 12px;
+    text-transform: capitalize;
 }
 form input#email {
     height: 10px;
     width: 330px;
     font-style: italic;
     font-size: 12px;
-    background-color: antiquewhite;
+}
+form input#email:focus {
+    background-color: yellow;
     color: indigo;
 }
 form input#theme {
@@ -80,3 +100,10 @@ form textarea {
     text-transform: capitalize;
 }
 
+.footer {
+    background-color: #707070;
+    height: 100px;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+}
