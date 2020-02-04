@@ -2,14 +2,34 @@ body {
     background-color: #f8f8f8;
 }
 
-.menu {
-    background-color: #8cbbd3;
+.header {
+    height: 200px;
 }
 
+.logo {
+    height: 80px;
+    width: 80px;
+    margin: 30px;
+    float: left;
+}
+
+.menu {
+    background-color: #8cbbd3;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    padding-bottom: 77px;
+}
+.menu li {
+    list-style-type: none;
+    float: left;
+    padding: 20px 10px;
+}
 .menu a {
     color: #8B00FF;
     font-style: italic;
     font-size: 20px;
+    text-decoration: none;
 }
 .menu a:hover{
     color: red;
@@ -17,18 +37,52 @@ body {
 .menu a:active {
     color: limegreen;
 }
-.menu li {
-    list-style-type: none;
+
+.images_desc_container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.images_desc_container > * {
+    padding: 10px;
+    flex: 1 100%;
+}
+.float_image {
+    flex: 1 1 0;
+    order: 1;
+    max-width: min-content;
 }
 
 .short_description {
+    flex: 1 0 0;
+    order: 2;
     color: #707070;
     font-size: 14px;
     font-style: italic;
     line-height: 16px;
 }
+.buy_item {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 30px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background-color: red;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+    inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+.buy_item:hover {
+    background-color: darkgreen;
+}
+.buy_item:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+    inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
 .specifications li {
-    list-style-image: url("http://tympanus.net/codrops-playground/assets/images/cssref/pseudo/list-style-image/list-style-image.png");
+    list-style-image: url("https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/DoubleChevronRight-16.png");
+
 }
 .long_description {
     color: #484343;
@@ -46,7 +100,7 @@ h3.long_description {
     background-color: #eaeaea;
 }
 .red-letter:first-letter {
-    font-family: "Helvetica Neue";
+    font-family: "Helvetica Neue", serif;
     color: red;
 }
 
@@ -59,6 +113,27 @@ h1 {
 }
 .product_img:hover {
     outline: none;
+}
+
+.catalog {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog > * {
+    padding: 10px;
+    flex: 1 100%;
+}
+.product {
+    flex: 1 1 0;
+    order: 1;
+    max-width: min-content;
+    padding: 10px 40px;
+    min-width: max-content;
+    align-self: center;
+    text-align: center;
 }
 
 .contact_us {
@@ -100,10 +175,17 @@ form textarea {
     text-transform: capitalize;
 }
 
+.map {
+    display: flex;
+    min-width: 100%;
+    min-height: 374px;
+}
+
 .footer {
     background-color: #707070;
     height: 100px;
-    text-align: center;
+    text-align: right;
+    padding-right: 20px;
     padding-top: 20px;
     margin-top: 20px;
 }
