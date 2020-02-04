@@ -2,23 +2,28 @@ body {
     background-color: #f8f8f8;
 }
 
+.container {
+    width: 1100px;
+    margin: 0 auto;
+}
+
 .header {
-    height: 200px;
+    height: 120px;
+    background: url("img/header-background.jpg");
+    background-size: 100%;
 }
 
 .logo {
     height: 80px;
     width: 80px;
-    margin: 30px;
+    margin: 10px;
     float: left;
 }
 
 .menu {
-    background-color: #8cbbd3;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    padding-bottom: 77px;
 }
 .menu li {
     list-style-type: none;
@@ -29,6 +34,7 @@ body {
     color: #8B00FF;
     font-style: italic;
     font-size: 20px;
+    font-weight: bold;
     text-decoration: none;
 }
 .menu a:hover{
@@ -134,6 +140,14 @@ h1 {
     min-width: max-content;
     align-self: center;
     text-align: center;
+    border: 2px solid rosybrown;
+    margin: 0 5px;
+    border-radius: 10px;
+}
+.product:hover {
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, .6),
+    inset -1px -1px 2px rgba(0, 0, 0, .6);
+    background: #ffffff;
 }
 
 .contact_us {
@@ -182,7 +196,7 @@ form textarea {
 }
 
 .footer {
-    background-color: #707070;
+    background-color: linen;
     height: 100px;
     text-align: right;
     padding-right: 20px;
